@@ -1,6 +1,6 @@
 static int WIDTH = 500;
 static int HEIGHT = 500;
-static int SEP = rw(.01);
+static int SEP = rw(.02);
 
 static int rw(float perc) {
   return Math.round(WIDTH*perc);
@@ -23,6 +23,7 @@ void draw() {
   }
 }
 void scale(int x, int y) {
+  pushMatrix();
   float rt = (float) (Math.random() * 45.0 - 22.5);
   rotate(radians(rt)); //WHY DOESN'T PROCESSING CONVERT RANDOM'S DOUBLE
   float xt = x+(float)(Math.random() * 11 - 5);
@@ -46,6 +47,7 @@ void scale(int x, int y) {
   bezierVertex(rw(-.05), rh(-.2), rw(.05), rh(-.2), rw(.05), rh(-.1));
   vertex(rw(0), rh(.05));
   endShape();
-  translate(-xt, -yt);
-  rotate(radians(-rt));
+  popMatrix();
+  //translate(-xt, -yt);
+  //rotate(radians(-rt));
 }
