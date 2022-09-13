@@ -15,6 +15,7 @@ void setup() {
   noLoop(); //stops the draw() function from repeating
 }
 void draw() {
+  stroke(50, 50, 50);
   background(50, 50, 50);
   for (int xpixel = 0; xpixel <= WIDTH; xpixel+=SEP) {
     for (int ypixel = 0; ypixel <= HEIGHT; ypixel+=SEP) {
@@ -29,8 +30,7 @@ void scale(int x, int y) {
   float xt = x+(float)(Math.random() * 11 - 5);
   float yt = y+(float)(Math.random() * 11 - 5);
   translate(xt, yt);
-  int edgediff = (int)(Math.random() * 20);
-  stroke(127+edgediff,127+edgediff,127+edgediff);
+  scale((float) (1+Math.random()));
   switch ((int)(Math.random() * 4)){
     case 1:
       fill(200+(int)(Math.random() * 127), (int)(Math.random() * 127), (int)(Math.random() * 127));
@@ -45,7 +45,8 @@ void scale(int x, int y) {
   beginShape(POLYGON);
   vertex(rw(-.05), rh(-.1));
   bezierVertex(rw(-.05), rh(-.2), rw(.05), rh(-.2), rw(.05), rh(-.1));
-  vertex(rw(0), rh(.05));
+  vertex(rw(0), rh(0));
+  vertex(rw(-.05), rh(-.1));
   endShape();
   popMatrix();
   //translate(-xt, -yt);
