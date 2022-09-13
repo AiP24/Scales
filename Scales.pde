@@ -25,12 +25,12 @@ void draw() {
 }
 void scale(int x, int y) {
   pushMatrix();
-  float rt = (float) (Math.random() * 45.0 - 22.5);
+  float rt =  (float) Math.random() * 45.0 - 22.5;
   rotate(radians(rt)); //WHY DOESN'T PROCESSING CONVERT RANDOM'S DOUBLE
   float xt = x+(float)(Math.random() * 11 - 5);
   float yt = y+(float)(Math.random() * 11 - 5);
   translate(xt, yt);
-  scale((float) (1+Math.random()));
+  scale(1+((float)Math.random() * .5 - .25));
   switch ((int)(Math.random() * 4)){
     case 1:
       fill(200+(int)(Math.random() * 127), (int)(Math.random() * 127), (int)(Math.random() * 127));
