@@ -1,6 +1,6 @@
 static int WIDTH = 500;
 static int HEIGHT = 500;
-static int SEP = rw(.02);
+static int SEP = rw(.02 + (float) Math.random() / 10);
 
 static int rw(float perc) {
   return Math.round(WIDTH*perc);
@@ -45,7 +45,7 @@ void scale(int x, int y) {
   beginShape(POLYGON);
   vertex(rw(-.05), rh(-.1));
   bezierVertex(rw(-.05), rh(-.2), rw(.05), rh(-.2), rw(.05), rh(-.1));
-  vertex(rw(0), rh((float) Math.random() / 10));
+  vertex(rw(0), rh((float) Math.random() / 10 - .05));
   vertex(rw(-.05), rh(-.1));
   endShape();
   popMatrix();
