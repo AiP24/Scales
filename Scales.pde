@@ -1,6 +1,6 @@
 static int WIDTH = 500;
 static int HEIGHT = 500;
-static int SEP = rw(.02 + (float) Math.random() / 10);
+static int SEP = rw(.02 + (float) Math.random() / 100 - 0.005);
 
 static int rw(float perc) {
   return Math.round(WIDTH*perc);
@@ -12,7 +12,7 @@ static int rh(float perc) {
 
 void setup() {
   size(500, 500);  //feel free to change the size
-  noLoop(); //stops the draw() function from repeating
+  //noLoop(); //stops the draw() function from repeating
 }
 void draw() {
   stroke(50, 50, 50);
@@ -33,13 +33,13 @@ void scale(int x, int y) {
   scale(1+((float)Math.random() * .5 - .25));
   switch ((int)(Math.random() * 4)){
     case 1:
-      fill(200+(int)(Math.random() * 127), (int)(Math.random() * 127), (int)(Math.random() * 127));
+      fill(200+(int)(Math.random() * 127), (int)(Math.random() * 100), (int)(Math.random() * 100));
       break;
     case 2:
-      fill(127+(int)(Math.random() * 127), (int)(Math.random() * 127), (int)(Math.random() * 127));
+      fill(127+(int)(Math.random() * 127), (int)(Math.random() * 100), (int)(Math.random() * 100));
       break;
     case 3:
-      fill(100+(int)(Math.random() * 127), (int)(Math.random() * 127), (int)(Math.random() * 127));
+      fill(100+(int)(Math.random() * 127), (int)(Math.random() * 100), (int)(Math.random() * 100));
       break; //probably unnessecary?  
   }
   beginShape(POLYGON);
