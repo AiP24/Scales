@@ -45,7 +45,7 @@ void scale(int x, int y) {
   beginShape(POLYGON);
   vertex(rw(-.05), rh(-.1));
   bezierVertex(rw(-.05), rh(-.2), rw(.05), rh(-.2), rw(.05), rh(-.1));
-  vertex(rw(0), rh(0));
+  vertex(rw(0), rh((float) Math.random() / 10));
   vertex(rw(-.05), rh(-.1));
   endShape();
   popMatrix();
