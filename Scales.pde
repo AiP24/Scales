@@ -12,7 +12,7 @@ static int rh(float perc) {
 
 void setup() {
   size(500, 500);  //feel free to change the size
-  //noLoop(); //stops the draw() function from repeating
+  noLoop(); //stops the draw() function from repeating
 }
 void draw() {
   stroke(50, 50, 50);
@@ -24,13 +24,13 @@ void draw() {
   }
 }
 void scale(int x, int y) {
-  pushMatrix();
   float rt =  (float) Math.random() * 45.0 - 22.5;
   rotate(radians(rt)); //WHY DOESN'T PROCESSING CONVERT RANDOM'S DOUBLE
   float xt = x+(float)(Math.random() * 11 - 5);
   float yt = y+(float)(Math.random() * 11 - 5);
   translate(xt, yt);
-  scale(1+((float)Math.random() * .5 - .25));
+  float sc = 1+((float)Math.random() * .5 - .25);
+  scale(sc);
   switch ((int)(Math.random() * 4)){
     case 1:
       fill(200+(int)(Math.random() * 127), (int)(Math.random() * 100), (int)(Math.random() * 100));
@@ -48,7 +48,7 @@ void scale(int x, int y) {
   vertex(rw(0), rh((float) Math.random() / 10 - .05));
   vertex(rw(-.05), rh(-.1));
   endShape();
-  popMatrix();
-  //translate(-xt, -yt);
-  //rotate(radians(-rt));
+  scale(1/sc);
+  translate(-xt, -yt);
+  rotate(radians(-rt));
 }
