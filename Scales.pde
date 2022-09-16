@@ -1,6 +1,6 @@
 static int WIDTH = 500;
 static int HEIGHT = 500;
-static int SEP = rw(.03 + (float) Math.random() / 100 - 0.005);
+static int SEP = rw(.05 + (float) Math.random() / 100 - 0.005);
 
 static int rw(float perc) {
   return Math.round(WIDTH*perc);
