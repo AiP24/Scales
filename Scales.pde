@@ -1,6 +1,6 @@
 static int WIDTH = 500;
 static int HEIGHT = 500;
-static int SEP = rw(.05 + (float) Math.random() / 100 - 0.005);
+static int SEP = rw(.02 + (float) Math.random() / 100 - 0.005);
 
 static int rw(float perc) {
   return Math.round(WIDTH*perc);
@@ -29,8 +29,8 @@ void scale(int x, int y) {
   float xt = x+(float)(Math.random() * 11 - 5);
   float yt = y+(float)(Math.random() * 11 - 5);
   translate(xt, yt);
-  float sc = 1+((float)Math.random() * .5 - .25);
-  scale(sc);
+  //float sc = 1+((float)Math.random() * .5 - .25);
+  //scale(sc); //too many transforms breaks processing.js
   switch ((int)(Math.random() * 4)){
     case 1:
       fill(200+(int)(Math.random() * 127), (int)(Math.random() * 100), (int)(Math.random() * 100));
