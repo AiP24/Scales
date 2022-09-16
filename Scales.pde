@@ -24,6 +24,7 @@ void draw() {
   }
 }
 void scale(int x, int y) {
+  pushMatrix();
   float rt =  (float) Math.random() * 45.0 - 22.5;
   rotate(radians(rt)); //WHY DOESN'T PROCESSING CONVERT RANDOM'S DOUBLE
   float xt = x+(float)(Math.random() * 11 - 5);
@@ -48,7 +49,7 @@ void scale(int x, int y) {
   vertex(rw(0), rh((float) Math.random() / 10 - .05));
   vertex(rw(-.05), rh(-.1));
   endShape();
-  resetMatrix();
+  popMatrix();
   //scale(1/sc);
   //translate(-xt, -yt);
   //rotate(radians(-rt));
