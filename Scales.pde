@@ -48,7 +48,8 @@ void scale(int x, int y) {
   vertex(rw(0), rh((float) Math.random() / 10 - .05));
   vertex(rw(-.05), rh(-.1));
   endShape();
-  scale(1/sc);
-  translate(-xt, -yt);
-  rotate(radians(-rt));
+  resetMatrix();
+  //scale(1/sc);
+  //translate(-xt, -yt);
+  //rotate(radians(-rt));
 }
